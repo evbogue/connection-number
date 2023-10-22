@@ -20,7 +20,7 @@ const channel = new BroadcastChannel('')
 
 channel.onmessage = e => {
   console.log(sockets.size)
-  //channel.postMessage(sockets.size)
+  channel.postMessage(sockets.size)
   sockets.forEach(s => s.send(sockets.size))
 }
 
